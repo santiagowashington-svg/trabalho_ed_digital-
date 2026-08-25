@@ -42,6 +42,661 @@
     de todos os estudantes e funcionários, os bens duráveis são importantes para o desenvolvimento <br>
     dos estudantes e gera um ambiente melhor para todos os envolvidos.</p>
 
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Evolutionary Vision design tokens */
+  --color-school-navy: var(--school-navy);
+  --color-school-blue: var(--school-blue);
+  --color-ugly-yellow: var(--ugly-yellow);
+  --color-ugly-red: var(--ugly-red);
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(0.978 0.005 250);
+  --foreground: oklch(0.192 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.192 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.192 0.02 260);
+  --primary: oklch(0.192 0.03 260);
+  --primary-foreground: oklch(0.98 0.003 247);
+  --secondary: oklch(0.95 0.01 250);
+  --secondary-foreground: oklch(0.192 0.03 260);
+  --muted: oklch(0.93 0.01 250);
+  --muted-foreground: oklch(0.55 0.04 260);
+  --accent: oklch(0.93 0.01 250);
+  --accent-foreground: oklch(0.192 0.03 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.88 0.02 250);
+  --input: oklch(0.88 0.02 250);
+  --ring: oklch(0.7 0.04 260);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  --school-navy: oklch(0.21 0.05 260);
+  --school-blue: oklch(0.61 0.2 260);
+  --ugly-yellow: oklch(0.97 0.25 100);
+  --ugly-red: oklch(0.63 0.26 25);
+}
+
+.dark {
+  --background: oklch(0.192 0.02 260);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.22 0.03 260);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.03 260);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.94 0.02 250);
+  --primary-foreground: oklch(0.21 0.03 260);
+  --secondary: oklch(0.28 0.04 260);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.28 0.04 260);
+  --muted-foreground: oklch(0.7 0.04 260);
+  --accent: oklch(0.28 0.04 260);
+  --accent-foreground: oklch(0.98 0.005 250);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+
+  --school-navy: oklch(0.94 0.02 250);
+  --school-blue: oklch(0.65 0.18 260);
+  --ugly-yellow: oklch(0.95 0.22 100);
+  --ugly-red: oklch(0.65 0.24 25);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-outfit);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space);
+  import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
+
+import appCss from "../styles.css?url";
+import { reportLovableError } from "../lib/lovable-error-reporting";
+
+function NotFoundComponent() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <div className="mt-6">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Go home
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+  console.error(error);
+  const router = useRouter();
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          This page didn't load
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Something went wrong on our end. You can try refreshing or head back home.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Try again
+          </button>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Go home
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Alvorada Edu — Do Caos ao Extraordinário" },
+      { name: "description", content: "Uma jornada visual da infraestrutura obsoleta da escola pública para o epicentro da educação tecnológica do amanhã." },
+      { name: "author", content: "Alvorada Institute" },
+      { property: "og:title", content: "Alvorada Edu — Do Caos ao Extraordinário" },
+      { property: "og:description", content: "Uma jornada visual da infraestrutura obsoleta da escola pública para o epicentro da educação tecnológica do amanhã." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@AlvoradaEdu" },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap",
+      },
+    ],
+  }),
+
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
+
+function RootShell({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Outlet />
+    </QueryClientProvider>
+  );
+}
+}import { createFileRoute } from "@tanstack/react-router";
+import schoolBefore from "../assets/school-before.jpg";
+import schoolAfter from "../assets/school-after.jpg";
+import classroomBefore from "../assets/classroom-before.jpg";
+import yardBefore from "../assets/yard-before.jpg";
+import classroomAfter from "../assets/classroom-after.jpg";
+import labAfter from "../assets/lab-after.jpg";
+import yardAfter from "../assets/yard-after.jpg";
+import libraryAfter from "../assets/library-after.jpg";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Alvorada Edu — Do Caos ao Extraordinário" },
+      { name: "description", content: "Veja a transformação de uma escola pública brasileira em seis imagens: do abandono ao futuro da educação tecnológica." },
+      { property: "og:title", content: "Alvorada Edu — Do Caos ao Extraordinário" },
+      { property: "og:description", content: "Veja a transformação de uma escola pública brasileira em seis imagens: do abandono ao futuro da educação tecnológica." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Index,
+});
+
+const comparisons = [
+  {
+    before: schoolBefore,
+    after: schoolAfter,
+    beforeAlt: "Corredor escuro e degradado de escola pública com tinta descascada e luzes piscando",
+    afterAlt: "Campus escolar moderno com paredes de vidro, jardins verticais e móveis futuristas",
+    title: "O Corredor",
+    description: "Do abandono silencioso para um espaço de encontro e descoberta.",
+  },
+  {
+    before: classroomBefore,
+    after: classroomAfter,
+    beforeAlt: "Sala de aula abandonada com carteiras quebradas, quadro rachado, janelas sujas e teto deteriorado",
+    afterAlt: "Sala de aula moderna com lousa digital, tablets, janelas amplas e alunos atentos",
+    title: "A Sala de Aula",
+    description: "De carteiras enferrujadas para um ambiente conectado e inspirador.",
+  },
+  {
+    before: yardBefore,
+    after: yardAfter,
+    beforeAlt: "Pátio de escola pública com concreto rachado, portão enferrujado e muros com pichação",
+    afterAlt: "Pátio escolar transformado com jardins, brinquedos de madeira, gramado e área coberta",
+    title: "O Pátio",
+    description: "De um terreno esquecido para um playground de aprendizado ao ar livre.",
+  },
+];
+
+const futureHighlights = [
+  {
+    image: labAfter,
+    alt: "Laboratório de robótica e programação com estudantes brasileiros usando computadores e kits de robôs",
+    title: "Lab de Inovação",
+    description: "Robótica, impressão 3D e programação para todos os alunos.",
+  },
+  {
+    image: libraryAfter,
+    alt: "Biblioteca escolar acolhedora com prateleiras de livros, puffs coloridos e crianças lendo",
+    title: "Biblioteca Viva",
+    description: "Um espaço para leitura, imaginação e encontros culturais.",
+  },
+];
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background font-outfit text-foreground">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+          <span className="font-space text-2xl font-bold tracking-tighter text-school-navy">
+            ALVORADA<span className="text-school-blue">.EDU</span>
+          </span>
+          <div className="hidden gap-8 text-sm font-medium uppercase tracking-widest md:flex">
+            <a href="#legado" className="text-school-blue transition-colors hover:text-school-navy">
+              O Legado
+            </a>
+            <a href="#galeria" className="text-muted-foreground transition-colors hover:text-school-navy">
+              Galeria
+            </a>
+            <a href="#futuro" className="text-muted-foreground transition-colors hover:text-school-navy">
+              Futuro
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className="relative overflow-hidden px-6 py-24">
+        <div className="mx-auto max-w-7xl text-center">
+          <h1 className="font-space text-6xl font-extrabold tracking-tight text-school-navy md:text-8xl">
+            Do Caos ao{" "}
+            <span className="bg-gradient-to-r from-school-blue to-indigo-600 bg-clip-text text-transparent">
+              Extraordinário.
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
+            Uma jornada visual da infraestrutura obsoleta para o epicentro da
+            educação tecnológica do amanhã — em 6 imagens.
+          </p>
+        </div>
+      </header>
+
+      {/* Main Comparison Section */}
+      <section id="legado" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid items-start gap-12 md:grid-cols-2">
+          {/* The "Ugly" State */}
+          <div className="group relative">
+            <div className="absolute -top-4 -left-4 z-10 rotate-[-2deg] bg-ugly-red px-4 py-1 font-bold text-white">
+              ESTADO ATUAL (2024)
+            </div>
+            <div className="border-8 border-ugly-red bg-ugly-yellow p-8 shadow-[12px_12px_0px_0px_rgba(255,0,0,1)]">
+              <div className="space-y-6">
+                <div className="grid aspect-video w-full place-items-center border-4 border-dashed border-ugly-red bg-white/50 overflow-hidden">
+                  <img
+                    src={schoolBefore}
+                    alt="Corredor escuro e degradado de escola pública com tinta descascada e luzes piscando"
+                    width={1024}
+                    height={768}
+                    loading="eager"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="font-space text-4xl font-black italic text-ugly-red underline">
+                    Bem vindos a Escola!!!
+                  </h3>
+                  <p className="text-lg font-bold leading-tight text-black">
+                    Nossa escola tem muitos problemas. A pintura está caindo e
+                    as salas são muito quentes. Não temos computadores novos e o
+                    pátio está sempre sujo.
+                  </p>
+                  <div className="inline-block animate-bounce border-2 border-black bg-white p-4">
+                    <span className="font-black text-ugly-red">CLIQUE AQUI!!!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* The "Improved" Future */}
+          <div className="relative">
+            <div className="absolute -top-4 -right-4 z-10 rotate-[2deg] bg-school-blue px-4 py-1 font-bold text-white shadow-xl">
+              VISÃO 2026
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-2xl">
+              <div className="overflow-hidden rounded-xl">
+                <img
+                  src={schoolAfter}
+                  alt="Campus escolar moderno com paredes de vidro, jardins verticais e móveis futuristas"
+                  width={1024}
+                  height={768}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover"
+                />
+              </div>
+              <div className="space-y-6 p-8">
+                <h3 className="font-space text-3xl font-bold leading-tight text-school-navy">
+                  Hub de Aprendizado de Alta Performance
+                </h3>
+                <p className="leading-relaxed text-muted-foreground">
+                  Uma arquitetura desenhada para a colaboração. Espaços abertos,
+                  climatização inteligente e integração total com a natureza
+                  urbana.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-lg border border-border bg-muted p-4">
+                    <span className="block text-2xl font-bold text-school-blue">
+                      100%
+                    </span>
+                    <span className="text-xs uppercase tracking-tighter text-muted-foreground">
+                      Energia Renovável
+                    </span>
+                  </div>
+                  <div className="rounded-lg border border-border bg-muted p-4">
+                    <span className="block text-2xl font-bold text-school-blue">
+                      AI
+                    </span>
+                    <span className="text-xs uppercase tracking-tighter text-muted-foreground">
+                      Native Labs
+                    </span>
+                  </div>
+                </div>
+                <button className="w-full transform rounded-lg bg-school-navy py-4 font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-school-blue">
+                  Explorar Projeto 3D
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section — 6 images */}
+      <section id="galeria" className="bg-muted py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="font-space text-4xl font-bold text-school-navy md:text-5xl">
+              A Transformação em Detalhes
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Cada imagem conta uma parte da história: do abandono à
+              renascença educacional.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {comparisons.map((item, index) => (
+              <div
+                key={item.title}
+                className="grid items-center gap-8 md:grid-cols-2"
+              >
+                <div
+                  className={`relative ${index % 2 === 1 ? "md:order-2" : ""}`}
+                >
+                  <div className="absolute -top-3 -left-3 z-10 rotate-[-2deg] bg-ugly-red px-3 py-1 text-xs font-bold text-white">
+                    ANTES
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border-4 border-ugly-red shadow-[8px_8px_0px_0px_rgba(255,0,0,1)]">
+                    <img
+                      src={item.before}
+                      alt={item.beforeAlt}
+                      width={1024}
+                      height={768}
+                      loading="lazy"
+                      className="aspect-video w-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div
+                  className={`relative ${index % 2 === 1 ? "md:order-1" : ""}`}
+                >
+                  <div className="absolute -top-3 -right-3 z-10 rotate-[2deg] bg-school-blue px-3 py-1 text-xs font-bold text-white shadow-xl">
+                    DEPOIS
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+                    <img
+                      src={item.after}
+                      alt={item.afterAlt}
+                      width={1024}
+                      height={768}
+                      loading="lazy"
+                      className="aspect-video w-full object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="font-space text-2xl font-bold text-school-navy">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+
+          {/* Future-only highlights */}
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            {futureHighlights.map((item) => (
+              <div
+                key={item.title}
+                className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  width={1024}
+                  height={768}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-space text-xl font-bold text-school-navy">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Transformation Pillars */}
+      <section id="futuro" className="bg-school-navy py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="font-space text-4xl font-bold text-primary-foreground">
+              Os Pilares da Mudança
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-24 bg-school-blue" />
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10">
+              <div className="mb-6 flex size-12 items-center justify-center rounded-full bg-school-blue/20 transition-transform group-hover:scale-110">
+                <div className="size-4 rounded-full bg-school-blue" />
+              </div>
+              <h4 className="mb-3 text-xl font-bold text-primary-foreground">
+                Infraestrutura
+              </h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Substituição de instalações precárias por ambientes modulares e
+                ergonômicos.
+              </p>
+            </div>
+
+            <div className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10">
+              <div className="mb-6 flex size-12 items-center justify-center rounded-full bg-indigo-500/20 transition-transform group-hover:scale-110">
+                <div className="size-4 rounded-full bg-indigo-500" />
+              </div>
+              <h4 className="mb-3 text-xl font-bold text-primary-foreground">
+                Ecossistema Digital
+              </h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Fibra óptica e laboratórios de robótica onde antes existiam
+                salas vazias.
+              </p>
+            </div>
+
+            <div className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10">
+              <div className="mb-6 flex size-12 items-center justify-center rounded-full bg-emerald-500/20 transition-transform group-hover:scale-110">
+                <div className="size-4 rounded-full bg-emerald-500" />
+              </div>
+              <h4 className="mb-3 text-xl font-bold text-primary-foreground">
+                Bio-Conectividade
+              </h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Jardins verticais e ventilação cruzada para o máximo conforto
+                cognitivo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-12">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+          <p className="text-sm italic text-muted-foreground">
+            "O design não é apenas como parece, é como funciona."
+          </p>
+          <div className="flex gap-6">
+            <span className="text-xs font-bold uppercase text-muted-foreground">
+              2025 © Alvorada Institute
+            </span>
+            <span className="text-xs font-bold uppercase text-school-blue">
+              Design for Future
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  ;
+
+
+
 
 
 </div>
